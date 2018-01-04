@@ -5,8 +5,9 @@
 
 int div[3]={10,30,50}; 
 
-double prim_f(double t){
-	return t*log(t)-t;
+double prim_f(double x){
+	return x;
+	//return log(x+sqrt(9+x*x));
 }
 
 double f(double x){
@@ -20,7 +21,7 @@ int main(void){
 	double st,ss,strue;
 	double rerr_tr,rerr_si;
 	
-	strue=prim_f(exp(1))-prim_f(exp(0));
+	strue=prim_f(b)-prim_f(a);
 
 	printf("%3s,%10s,%10s,%10s,%10s,%10s\n","div", "trape", "simps", "true", "rerr(tra)", "rerr(sim)");	
 	for(i=0;i<3;i++){
