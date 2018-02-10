@@ -28,7 +28,7 @@ int main(void){
 		printf("%3d %8.1lf %8.2lf\n",i, x[i], y[i]);
 	}
 
-	/* mean */
+	/* 平均 */
 	for(i=0; i<N; i++){
 		mx += x[i];
 		my += y[i];
@@ -38,7 +38,7 @@ int main(void){
 
 	printf("mx=%lf\nmy=%lf\n",mx,my);
 
-	/*  */
+	/* 偏差 */
 	for(i=0; i<N; i++){
 		sx  += pow(x[i]-mx, 2);
 		sy  += pow(y[i]-my, 2);
@@ -46,13 +46,13 @@ int main(void){
 	}
 	printf("sx=%lf\nsy=%lf\nsxy=%lf\n",sx,sy,sxy);
 
-	/*  */
+	/* 回帰直線 */
 	a1=sxy/sx;
 	a0=my-a1*mx;
 
 	printf("y = f(x) = %lf + %lf * x\n",a0, a1);
 	
-	/*  */
+	/* 相関係数 */
 	r=sxy/sqrt(sx*sy);
 	printf("r=%lf",r);
 
